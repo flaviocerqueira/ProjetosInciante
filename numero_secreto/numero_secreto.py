@@ -2,7 +2,7 @@ import random
 
 
 def sortear_numero():
-    return random.randint(1,3)
+    return random.randint(1,1000)
 
 
 def chutar_numero(segredo):
