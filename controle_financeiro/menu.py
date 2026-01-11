@@ -9,6 +9,11 @@ def exibir_menu():
           "3 - Listar movimentações\n"
           "4 - Mostrar o saldo\n"
           "5 - Sair do Sistema")
-    opcao = int(input("Digite a opção desejada: "))
-    return opcao
-
+    try:
+        opcao = int(input("Digite a opção desejada: "))
+        if 1 <= opcao <= 5:
+            return opcao
+        else:
+            print('Opção inválida! Escolha um número entre 1 e 5')
+    except ValueError:
+        print('Entrada inválida! Digite um número entre 1 e 5')
