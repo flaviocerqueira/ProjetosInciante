@@ -18,5 +18,5 @@ if __name__ == "__main__":
         elif opcao == 4:
             print(f'Saldo Atual: R$ {calcular_saldo(movimentacoes):.2f}')
         elif opcao == 5:
-            print('SISTEMA FINALIZADO')
+            print('SISTEMA FINALIZADO!')
             break
