@@ -21,11 +21,14 @@ def adicionar_despesa():
 
 
 def calcular_saldo(movimentacoes):
+    TIPO_RECEITA = 'RECEITA'
+    TIPO_DESPESA = 'DESPESA'
     saldo = 0
+
     for movimento in movimentacoes:
-        if movimento['tipo'] == 'RECEITA':
+        if movimento['tipo'] == TIPO_RECEITA:
            saldo += movimento['valor']
-        elif movimento['tipo'] == 'DESPESA':
+        elif movimento['tipo'] == TIPO_DESPESA:
             saldo -= movimento['valor']
     return saldo
 
