@@ -1,10 +1,12 @@
+TIPO_RECEITA = 'RECEITA'
+TIPO_DESPESA = 'DESPESA'
 
 
 def adicionar_receita():
     categoria = input("Qual a categoria da Receita? ")
-    valor = float(input("Qual o valor da Receita? "))
+    valor = validar_valor()
     return {
-            'tipo': 'RECEITA',
+            'tipo': TIPO_RECEITA,
             'categoria': categoria,
             'valor': valor
     }
@@ -12,17 +14,15 @@ def adicionar_receita():
 
 def adicionar_despesa():
     categoria = input("Qual a categoria da Despesa? ")
-    valor = float(input("Qual o valor da Despesa? "))
+    valor = validar_valor()
     return {
-        'tipo': 'DESPESA',
+        'tipo': TIPO_DESPESA,
         'categoria': categoria,
         'valor': valor
     }
 
 
 def calcular_saldo(movimentacoes):
-    TIPO_RECEITA = 'RECEITA'
-    TIPO_DESPESA = 'DESPESA'
     saldo = 0
 
     for movimento in movimentacoes:
@@ -35,5 +35,17 @@ def calcular_saldo(movimentacoes):
 
 def listar_movimentacoes(movimentacoes):
     for movimento in movimentacoes:
-        print(f"[{movimento['tipo']}] {movimento['categoria']} - R$ {movimento['valor']}")
+        print(f"[{movimento['tipo']}] {movimento['categoria']} - R$ {movimento['valor']:.2f}")
 
+
+def validar_valor():
+    while True:
+        try:
+            valor = float(input('Informe o valor: '))
+            if valor >= 0:
+                print('Entrada cadastrada.')
+                return valor
+            else:
+                print('Entrada inválida. Informe um valor positivo!')
+        except ValueError:
+            print('Entrada inválida. Informe um valor numérico')
