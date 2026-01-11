@@ -65,6 +65,6 @@ Projeto desenvolvido em Python para controle financeiro pessoal via terminal, pe
 
 ## 👨‍💻 Autor
 
-Flávio Silva Cerqueira
+**Flávio Silva Cerqueira**
 
 Projeto desenvolvido com fins educacionais e de aprendizado em Python.
